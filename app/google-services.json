@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "287830248773",
+    "project_id": "pondoku-32ff8",
+    "storage_bucket": "pondoku-32ff8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287830248773:android:4824012cb93dc0c29fc22c",
+        "android_client_info": {
+          "package_name": "com.pondoku.pondoku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287830248773-p4c393kpd1ac7mv0sud3rs4cemq28m7f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbqGVeSWNTIE0c3KYhzuJbnmc13wqpUuw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287830248773-p4c393kpd1ac7mv0sud3rs4cemq28m7f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

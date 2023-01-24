@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.pondoku.pondoku.home.HomeFragment"
+        android:label="@string/dashboard_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_following"
+        android:name="com.pondoku.pondoku.following.FollowingFragment"
+        android:label="@string/dashboard_following"
+        tools:layout="@layout/fragment_following" />
+
+    <fragment
+        android:id="@+id/navigation_add_habit"
+        android:name="com.pondoku.pondoku.add.AddHabitFragment"
+        android:label="@string/dashboard_add"
+        tools:layout="@layout/fragment_add_habit" />
+
+    <fragment
+        android:id="@+id/navigation_sharing"
+        android:name="com.pondoku.pondoku.sharing.SharingFragment"
+        android:label="@string/dashboard_sharing"
+        tools:layout="@layout/fragment_sharing" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.pondoku.pondoku.settings.SettingsFragment"
+        android:label="@string/dashboard_settings"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>
