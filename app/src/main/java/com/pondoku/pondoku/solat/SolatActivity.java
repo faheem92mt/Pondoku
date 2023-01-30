@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -42,6 +43,8 @@ public class SolatActivity extends AppCompatActivity {
         binding.solatRecycler.setLayoutManager(new LinearLayoutManager(this));
 
         loadData();
+        scrollToPosition();
+
     }
 
     private void loadData() {
@@ -71,15 +74,18 @@ public class SolatActivity extends AppCompatActivity {
                             JSONObject prayerTime = jsonArray.getJSONObject(i);
 //                           // //JSONObject dateObject = dataArray.getJSONObject(i).getJSONObject("date");
 
-                            String fajr = prayerTime.getString("fajr");
-                            String zuhr = prayerTime.getString("dhuhr");
-                            String asr =  prayerTime.getString("asr");
+                            String imsak = prayerTime.getString("imsak");
+                            String subuh = prayerTime.getString("fajr");
+                            String syuruk =  prayerTime.getString("syuruk");
+
+                            String zuhur = prayerTime.getString("dhuhr");
+                            String asar = prayerTime.getString("asr");
                             String maghrib = prayerTime.getString("maghrib");
-                            String isha = prayerTime.getString("isha");
+                            String isyak = prayerTime.getString("isha");
 //
                             String date = prayerTime.getString("date");
 
-                            SolatModel solatModel = new SolatModel(fajr,zuhr,asr,maghrib,isha,date);
+                            SolatModel solatModel = new SolatModel(imsak,subuh,syuruk,zuhur,asar,maghrib,isyak,date);
 
                             solatAdapter.add(solatModel);
 
@@ -117,6 +123,15 @@ public class SolatActivity extends AppCompatActivity {
 
         startActivity(new Intent(SolatActivity.this, HomeYeahh.class));
 
+    }
+
+    public void scrollToPosition() {
+//        int position = namazAdapter.getItemPosition("24-Jan-2023");
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        System.out.println(day+2);
+        Log.d("Hello", String.valueOf(day));
+        binding.solatRecycler.scrollToPosition(day-1);
     }
 
 }

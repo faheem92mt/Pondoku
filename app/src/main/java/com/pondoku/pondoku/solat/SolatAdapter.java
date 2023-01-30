@@ -55,31 +55,49 @@ public class SolatAdapter extends RecyclerView.Adapter<SolatAdapter.MyViewHolder
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView fajr,zuhr,asr,maghrib,isha,date;
+        private TextView imsak,subuh,syuruk,zuhur,asar,maghrib,isyak,date;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            fajr = itemView.findViewById(R.id.fajrTv);
-            zuhr = itemView.findViewById(R.id.zuhrTv);
-            asr = itemView.findViewById(R.id.asrTv);
+            imsak = itemView.findViewById(R.id.imsakTv);
+            subuh = itemView.findViewById(R.id.subuhTv);
+
+            syuruk = itemView.findViewById(R.id.syurukTv);
+            zuhur = itemView.findViewById(R.id.zuhurTv);
+
+            asar = itemView.findViewById(R.id.asarTv);
             maghrib = itemView.findViewById(R.id.maghribTv);
-            isha = itemView.findViewById(R.id.ishaTv);
+
+            isyak = itemView.findViewById(R.id.isyakTv);
             date = itemView.findViewById(R.id.dateTv);
         }
 
         public void bindViews(SolatModel solatModel) {
-            fajr.setText(solatModel.getFajr());
-            zuhr.setText(solatModel.getZuhr());
-            asr.setText(solatModel.getAsr());
+            imsak.setText(solatModel.getImsak());
+            subuh.setText(solatModel.getSubuh());
+            syuruk.setText(solatModel.getSyuruk());
+            zuhur.setText(solatModel.getZuhur());
+
+
+            asar.setText(solatModel.getAsar());
             maghrib.setText(solatModel.getMaghrib());
-            isha.setText(solatModel.getIsha());
+            isyak.setText(solatModel.getIsyak());
             date.setText(solatModel.getDate());
 
 
 
 
         }
+    }
+
+    public int getItemPosition(String eventId) {
+        for (int i = 0; i < solatModelList.size(); i++) {
+            if (solatModelList.get(i).getDate().equals(eventId)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
 }

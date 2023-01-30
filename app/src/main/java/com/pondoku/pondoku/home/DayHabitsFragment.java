@@ -42,6 +42,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.pondoku.pondoku.R;
 import com.pondoku.pondoku.databinding.FragmentDayHabitsBinding;
+import com.pondoku.pondoku.login.LoginActivity;
 import com.pondoku.pondoku.utils.Constants;
 
 import java.util.ArrayList;
@@ -204,33 +205,36 @@ public class DayHabitsFragment extends Fragment {
         if ((cardView.getCardBackgroundColor().getDefaultColor() ==
                 ContextCompat.getColor(getContext(), R.color.red_main))) {
 
-            // need to check if a habit event already exists for the current habit for that day
-            DocumentReference documentReference = db.collection("Users").document(uid).
-                    collection("Events").document(habitEventTitle);
+            Toast.makeText(getContext(), "Alhamdulillah! This Habit Activity has been already completed for the day!",
+                    Toast.LENGTH_SHORT).show();
 
-            documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        DocumentSnapshot document = task.getResult();
-                        if (document.exists()) {
-                            // if a habit event already exists, generate a prompt for the user
-                            Log.d(Constants.CHECK_IF_HABIT_EVENT_EXISTS, "Document exists");
-                            Toast.makeText(getContext(), "You have already added a habit event for today. Edit or delete your event on the Habit Events page.",
-                                    Toast.LENGTH_LONG).show();
-                        } else {
-                            // else, prompt the user to add a habit event by going to another activity
-                            Log.d(Constants.CHECK_IF_HABIT_EVENT_EXISTS, "No such document");
-                            Intent intent = new Intent(getContext(), AddHabitEventActivity.class);
-                            intent.putExtra(Constants.TITLE_DAY_HABIT, habit.getDayHabitTitle());
-                            intent.putExtra(Constants.TITLE_HABIT_EVENT, habitEventTitle);
-                            startActivity(intent);
-                        }
-                    } else {
-                        Log.d(Constants.CHECK_IF_HABIT_EVENT_EXISTS, "get failed with ", task.getException());
-                    }
-                }
-            });
+//            // need to check if a habit event already exists for the current habit for that day
+//            DocumentReference documentReference = db.collection("Users").document(uid).
+//                    collection("Events").document(habitEventTitle);
+//
+//            documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                @Override
+//                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                    if (task.isSuccessful()) {
+//                        DocumentSnapshot document = task.getResult();
+//                        if (document.exists()) {
+//                            // if a habit event already exists, generate a prompt for the user
+//                            Log.d(Constants.CHECK_IF_HABIT_EVENT_EXISTS, "Document exists");
+//                            Toast.makeText(getContext(), "You have already added a habit event for today. Edit or delete your event on the Habit Events page.",
+//                                    Toast.LENGTH_LONG).show();
+//                        } else {
+//                            // else, prompt the user to add a habit event by going to another activity
+//                            Log.d(Constants.CHECK_IF_HABIT_EVENT_EXISTS, "No such document");
+//                            Intent intent = new Intent(getContext(), AddHabitEventActivity.class);
+//                            intent.putExtra(Constants.TITLE_DAY_HABIT, habit.getDayHabitTitle());
+//                            intent.putExtra(Constants.TITLE_HABIT_EVENT, habitEventTitle);
+//                            startActivity(intent);
+//                        }
+//                    } else {
+//                        Log.d(Constants.CHECK_IF_HABIT_EVENT_EXISTS, "get failed with ", task.getException());
+//                    }
+//                }
+//            });
         }
         // else, the user can assign completion to the habit given clicked day == current day
         else {

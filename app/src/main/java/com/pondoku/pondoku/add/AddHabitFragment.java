@@ -159,7 +159,7 @@ public class AddHabitFragment extends Fragment {
         if (mon.isChecked()){
             frequency.add("Monday");
         }
-        if (mon.isChecked()){
+        if (tue.isChecked()){
             frequency.add("Tuesday");
         }
         if (wed.isChecked()){

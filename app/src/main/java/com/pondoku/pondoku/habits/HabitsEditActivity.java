@@ -229,7 +229,7 @@ public class HabitsEditActivity extends AppCompatActivity {
         if (mon.isChecked()){
             newFrequency.add("Monday");
         }
-        if (mon.isChecked()){
+        if (tue.isChecked()){
             newFrequency.add("Tuesday");
         }
         if (wed.isChecked()){

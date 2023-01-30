@@ -41,12 +41,16 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//
+//        startActivity(new Intent(MainActivity.this, HomeYeahh.class));
+//
+//    }
 
-        startActivity(new Intent(MainActivity.this, HomeYeahh.class));
-
-    }
+//    public void onBackPressed() {
+//        //do nothing
+//    }
 
 }

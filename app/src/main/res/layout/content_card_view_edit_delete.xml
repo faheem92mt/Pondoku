@@ -7,6 +7,7 @@
     android:descendantFocusability="blocksDescendants"
     android:clickable="false"
     android:focusable="false"
+
     android:clipToPadding="false">
 
     <androidx.cardview.widget.CardView

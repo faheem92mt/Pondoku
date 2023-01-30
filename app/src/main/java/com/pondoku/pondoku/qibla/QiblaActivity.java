@@ -47,19 +47,32 @@ public class QiblaActivity extends AppCompatActivity implements SensorEventListe
 
     }
 
+    protected void onResume() {
+        super.onResume();
+        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_FASTEST);
+    }
 
+    protected void onStart() {
+        super.onStart();
+        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_FASTEST);
+    }
+
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(this);
+    }
 
 
     @Override
     public void onSensorChanged(SensorEvent event) {
 
-        int degree = Math.round(event.values[0]);
+        float degree = Math.round(event.values[0]);
 
         RotateAnimation animation = new RotateAnimation(currentDegree, -degree, Animation.RELATIVE_TO_SELF, 0.5f,
                 Animation.RELATIVE_TO_SELF, 0.5f);
         animation.setDuration(500);
         animation.setFillAfter(true);
-        ic_compass.setAnimation(animation);
+        ic_compass.startAnimation(animation);
         currentDegree = -degree;
     }
 

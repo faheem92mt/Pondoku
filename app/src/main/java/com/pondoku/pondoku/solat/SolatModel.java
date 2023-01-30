@@ -2,48 +2,64 @@ package com.pondoku.pondoku.solat;
 
 public class SolatModel {
 
-    private String fajr;
-    private String zuhr;
-    private String asr;
+    private String imsak;
+    private String subuh;
+    private String syuruk;
+    private String zuhur;
+    private String asar;
     private String maghrib;
-    private String isha;
+    private String isyak;
     private String date;
 
-    public SolatModel(String fajr, String zuhr, String asr, String maghrib, String isha, String date) {
-        this.fajr = fajr;
-        this.zuhr = zuhr;
-        this.asr = asr;
+    public SolatModel(String imsak, String subuh, String syuruk, String zuhur, String asar, String maghrib, String isyak, String date) {
+        this.imsak = imsak;
+        this.subuh = subuh;
+        this.syuruk = syuruk;
+        this.zuhur = zuhur;
+        this.asar = asar;
         this.maghrib = maghrib;
-        this.isha = isha;
+        this.isyak = isyak;
         this.date = date;
     }
 
-    public SolatModel(String fajr) {
-        this.fajr = fajr;
+    public String getImsak() {
+        return imsak;
     }
 
-    public String getFajr() {
-        return fajr;
+    public void setImsak(String imsak) {
+        this.imsak = imsak;
     }
 
-    public void setFajr(String fajr) {
-        this.fajr = fajr;
+    public String getSubuh() {
+        return subuh;
     }
 
-    public String getZuhr() {
-        return zuhr;
+    public void setSubuh(String subuh) {
+        this.subuh = subuh;
     }
 
-    public void setZuhr(String zuhr) {
-        this.zuhr = zuhr;
+    public String getSyuruk() {
+        return syuruk;
     }
 
-    public String getAsr() {
-        return asr;
+    public void setSyuruk(String syuruk) {
+        this.syuruk = syuruk;
     }
 
-    public void setAsr(String asr) {
-        this.asr = asr;
+    public String getZuhur() {
+        return zuhur;
+    }
+
+    public void setZuhur(String zuhur) {
+        this.zuhur = zuhur;
+    }
+
+    public String getAsar() {
+        return asar;
+    }
+
+    public void setAsar(String asar) {
+        this.asar = asar;
     }
 
     public String getMaghrib() {
@@ -54,12 +70,12 @@ public class SolatModel {
         this.maghrib = maghrib;
     }
 
-    public String getIsha() {
-        return isha;
+    public String getIsyak() {
+        return isyak;
     }
 
-    public void setIsha(String isha) {
-        this.isha = isha;
+    public void setIsyak(String isyak) {
+        this.isyak = isyak;
     }
 
     public String getDate() {
@@ -69,6 +85,5 @@ public class SolatModel {
     public void setDate(String date) {
         this.date = date;
     }
-
 
 }

@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.pondoku.pondoku.HomeYeahh;
 import com.pondoku.pondoku.MainActivity;
 import com.pondoku.pondoku.R;
+import com.pondoku.pondoku.profile.ResetPasswordActivity;
 import com.pondoku.pondoku.signup.SignupActivity;
 import com.pondoku.pondoku.solat.SolatActivity;
 
@@ -35,12 +37,21 @@ public class LoginActivity extends AppCompatActivity {
     TextView signUpRedirect;
     Button loginButton;
 
+    public static FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    public static FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
     private static final String TAG = "EmailPassword";
     private FirebaseAuth mAuth;
 
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+        // forces the app to run in light mode and disables dark mode
+        // since this is the launcher activity
+        // we put the instructions here
+
+
         setContentView(R.layout.login_screen);
 
         // Initialize Firebase Auth
@@ -60,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent); //switch activity
             }
         });
+
         // click on login button
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +122,27 @@ public class LoginActivity extends AppCompatActivity {
     public void updateUI(FirebaseUser user) {
         Intent intent = new Intent(LoginActivity.this, HomeYeahh.class);
         startActivity(intent); //switch activity
-        LoginActivity.this.finish(); // close Login activity
+//        LoginActivity.this.finish(); // close Login activity
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser fbUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (fbUser!=null) {
+            startActivity(new Intent(LoginActivity.this, HomeYeahh.class));
+            finish();
+        }
+    }
+
+    public void tvResetPasswordClick(View view) {
+        startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+    }
+
+    public void onBackPressed() {
+        //do nothing
+    }
+
 }

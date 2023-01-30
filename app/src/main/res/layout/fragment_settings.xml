@@ -5,6 +5,7 @@
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:fillViewport="true">
 
 <LinearLayout
@@ -21,10 +22,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
        android:padding="10dp"
-        android:background="@color/red_main"
+        android:background="@color/black"
         android:text="Settings"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/teal_200"
         android:textSize="40sp"
         android:textStyle="bold" />
 
@@ -34,7 +35,7 @@
         android:layout_marginTop="30dp"
         android:textAlignment="center"
         android:textSize="18dp"
-        android:text="Account"
+        android:text="Account Details"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_height="wrap_content">
@@ -51,7 +52,7 @@
         android:background="@color/darker_grey"
         android:drawableLeft="@drawable/id_card"
         android:drawablePadding="10dp"
-        android:drawableTint="@color/red_main"
+        android:drawableTint="@color/teal_700"
 
         android:padding="7dp"
         android:text="Some Username"
@@ -71,7 +72,7 @@
         android:background="@color/darker_grey"
         android:drawableLeft="@drawable/mail"
         android:drawablePadding="10dp"
-        android:drawableTint="@color/red_main"
+        android:drawableTint="@color/teal_700"
         android:padding="7dp"
         android:text="Some Email"
         android:textColor="@color/black"
@@ -90,7 +91,7 @@
         android:background="@color/darker_grey"
         android:drawableLeft="@drawable/lock"
         android:drawablePadding="10dp"
-        android:drawableTint="@color/red_main"
+        android:drawableTint="@color/teal_700"
         android:padding="7dp"
         android:text="********"
         android:textColor="@color/black"
@@ -99,31 +100,27 @@
 
     </TextView>
 
-    <TextView
-        android:id="@+id/languageSettings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/darker_grey"
-        android:drawableLeft="@drawable/world"
-        android:drawablePadding="10dp"
-        android:drawableTint="@color/red_main"
-        android:padding="7dp"
-        android:text="Canada"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold">
 
-    </TextView>
+
+
 
     <Button
         android:id="@+id/logOutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="0dp"
         android:textAlignment="center"
+        android:textColor="@color/black"
+        android:text="Change Password"></Button>
+
+    <Button
+        android:id="@+id/logOutButtton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         android:text="Log out"></Button>
+
 </LinearLayout>
 </ScrollView>

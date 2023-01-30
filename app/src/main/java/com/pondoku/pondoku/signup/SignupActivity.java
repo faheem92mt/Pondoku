@@ -3,6 +3,7 @@ package com.pondoku.pondoku.signup;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.pondoku.pondoku.HomeYeahh;
 import com.pondoku.pondoku.MainActivity;
 import com.pondoku.pondoku.R;
 import com.pondoku.pondoku.login.LoginActivity;
@@ -96,22 +98,38 @@ public class SignupActivity extends AppCompatActivity {
                     Toast.makeText(SignupActivity.this, "Please confirm your password!",
                             Toast.LENGTH_SHORT).show();
 
-                } else if (!checkEmail(emailText.getText().toString())) {
+                }
+                else if (!checkEmail(emailText.getText().toString())) {
                     Log.w(TAG, "LoginFailure");
                     Toast.makeText(SignupActivity.this, "Please enter a correct email address!",
                             Toast.LENGTH_SHORT).show();
 
-                } else if (!passwordText.getText().toString().equals(confirmPasswordText.getText().toString())) {
+                }
+
+//                else if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
+//
+//                }
+//                else if (!Patterns.EMAIL_ADDRESS.matcher((CharSequence) emailText).matches()) {
+//                    emailText.setError(getString(R.string.enter_correct_email));
+//                }
+                else if (!passwordText.getText().toString().equals(confirmPasswordText.getText().toString())) {
                     Log.w(TAG, "LoginFailure");
                     Toast.makeText(SignupActivity.this, "The passwords don't match!",
                             Toast.LENGTH_SHORT).show();
 
-                } else if (passwordText.getText().toString().length() < 8) {
+                }
+                else if (passwordText.getText().toString().length() < 8) {
                     Log.w(TAG, "LoginFailure");
                     Toast.makeText(SignupActivity.this, "The password must be at least 8 characters",
                             Toast.LENGTH_SHORT).show();
 
-                } else {
+                }
+//                else if(!containsSpecialCharacter(passwordText.getText().toString())) {
+//                    Log.w(TAG, "LoginFailure");
+//                    Toast.makeText(SignupActivity.this, "Please include at least one special character!",
+//                            Toast.LENGTH_SHORT).show();
+//                }
+                else {
                     // Sign up the user
                     Toast.makeText(SignupActivity.this, "Signing Up!",
                             Toast.LENGTH_SHORT).show();
@@ -145,6 +163,8 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     /**
      * This method adds the user to the FireStore database
@@ -225,7 +245,7 @@ public class SignupActivity extends AppCompatActivity {
      * @param user The user that just logged in
      */
     public void updateUI(FirebaseUser user) {
-        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+        Intent intent = new Intent(SignupActivity.this, HomeYeahh.class);
         startActivity(intent); //switch activity
         SignupActivity.this.finish(); // close Login activity
     }

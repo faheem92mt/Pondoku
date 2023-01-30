@@ -49,7 +49,7 @@ public class SharingHabitActivity extends AppCompatActivity {
             finish();
         });
         binding.name.setText(mFollowing.getName());
-        binding.uid.setText(getResources().getString(R.string.uid) + mFollowing.getUid());
+//        binding.uid.setText(getResources().getString(R.string.uid) + mFollowing.getUid());
         binding.habitsList.setAdapter(mAdapter);
     }
 

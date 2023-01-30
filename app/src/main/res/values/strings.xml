@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Pondoku</string>
     <string name="enter_email">Enter Email</string>
-    <string name="enter_password">Enter Password</string>
+    <string name="enter_password">Enter New Password</string>
     <string name="login">Login</string>
     <string name="reset_password">Reset Password</string>
     <string name="donthave_account">Don\'t Have Account</string>
     <string name="signup">Sign Up</string>
     <string name="enter_name">Enter Name</string>
-    <string name="confirm_password">Confirm Password</string>
+    <string name="confirm_password">Confirm New Password</string>
     <string name="enter_correct_email">Enter Correct Email</string>
     <string name="password_mismatch">Password Mismatch</string>
     <string name="signup_failed">Signup Failed</string>
@@ -23,7 +23,7 @@
     <string name="view_all_habit_events">Habit Events</string>
     <string name="chosen_day_habit_title">Chosen Day Habit</string>
     <string name="home_image_description">design image for home view</string>
-    <string name="home_instructions">Get a clear view of your day.\n Click a date to see your habits for that day.\n Tap + to add a habit.</string>
+    <string name="home_instructions">Get a clear view of your day.\n \n Click a date on the calendar to see your Islamic habits for that day.\n \n Tap + to add a habit.</string>
     <string name="day_habits_title_activity">Habits Title</string>
     <string name="habit_event_title_activity">Habit Events Title</string>
     <string name="done">DONE</string>
@@ -54,4 +54,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="map_key">Map Key</string>
+    <string name="password_changed_successfully">Alhamdulillah! Password Changed!</string>
+    <string name="something_went_wrong">Ooops! Something Went Wrong!</string>
+    <string name="change_password">Change Password</string>
+    <string name="reset_password_instructions_sent">Reset Password Instructions Sent to your Email: %1$s</string>
+    <string name="resend_timer">Resend in : %1$s</string>
+    <string name="retry">Retry</string>
+    <string name="email_sent_failed">Sorry! Failed to send email: %1$s</string>
 </resources>

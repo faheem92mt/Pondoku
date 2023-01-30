@@ -1,5 +1,6 @@
 package com.pondoku.pondoku.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,10 +14,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
 
+import com.pondoku.pondoku.HomeYeahh;
 import com.pondoku.pondoku.R;
 import com.pondoku.pondoku.databinding.FragmentHomeBinding;
 import com.pondoku.pondoku.habitEvents.HabitEventsFragment;
 import com.pondoku.pondoku.habits.HabitsFragment;
+import com.pondoku.pondoku.profile.ChangePasswordActivity;
 import com.pondoku.pondoku.utils.Constants;
 
 import java.util.Calendar;
@@ -151,11 +154,16 @@ public class HomeFragment extends Fragment {
      * 'true' to confirm with the listener
      */
     private boolean onHabitEventsClick(View view) {
-        Fragment fragment = new HabitEventsFragment();
-        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.replace(R.id.nav_host_fragment_activity_main, fragment, Constants.START_ALL_EVENTS_VIEW_FRAGMENT);
-        transaction.addToBackStack(null);
-        transaction.commit();
+//        Fragment fragment = new HabitEventsFragment();
+//        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+//        transaction.replace(R.id.nav_host_fragment_activity_main, fragment, Constants.START_ALL_EVENTS_VIEW_FRAGMENT);
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//        return true;
+        Intent intent = new Intent(getContext(), HomeYeahh.class);
+        getActivity().onBackPressed();
+        getActivity().finish();
+        startActivity(intent);
         return true;
     }
 
