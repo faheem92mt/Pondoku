@@ -91,13 +91,13 @@ public class SolatAdapter extends RecyclerView.Adapter<SolatAdapter.MyViewHolder
         }
     }
 
-    public int getItemPosition(String eventId) {
-        for (int i = 0; i < solatModelList.size(); i++) {
-            if (solatModelList.get(i).getDate().equals(eventId)) {
-                return i;
-            }
-        }
-        return -1;
-    }
+// public int getItemPosition(String eventId) {
+//     for (int i = 0; i < solatModelList.size(); i++) {
+//         if (solatModelList.get(i).getDate().equals(eventId)) {
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
 
 }

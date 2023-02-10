@@ -50,9 +50,9 @@ public class ChangePasswordActivity extends AppCompatActivity {
         else if(confirmPassword.equals("")) {
             etConfirmPassword.setError(getString(R.string.confirm_password));
         }
-//        else if(password.equals(confirmPassword)){
-//            etConfirmPassword.setError(getString(R.string.password_mismatch));
-//        }
+        else if(!password.equals(confirmPassword)){
+            etConfirmPassword.setError(getString(R.string.password_mismatch));
+        }
         else {
 
 

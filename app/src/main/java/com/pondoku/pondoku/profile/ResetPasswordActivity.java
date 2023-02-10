@@ -43,7 +43,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
         if (email.equals("")) {
             etEmail.setError(getString(R.string.enter_email));
-            Toast.makeText(ResetPasswordActivity.this, "lol empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ResetPasswordActivity.this, "Please enter a valid email!", Toast.LENGTH_SHORT).show();
         }
         else {
             FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();

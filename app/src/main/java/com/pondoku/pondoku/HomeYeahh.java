@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.pondoku.pondoku.alarm.AlarmActivity;
-import com.pondoku.pondoku.login.LoginActivity;
 import com.pondoku.pondoku.profile.ChangePasswordActivity;
 import com.pondoku.pondoku.qibla.QiblaActivity;
 import com.pondoku.pondoku.solat.SolatActivity;
@@ -44,10 +41,7 @@ public class HomeYeahh extends AppCompatActivity {
         finish();
     }
 
-    public void btnAlarmClick(View v) {
-        startActivity(new Intent(HomeYeahh.this, AlarmActivity.class));
-        finish();
-    }
+
 
     public void btnProfileClick(View view) {
 //        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();

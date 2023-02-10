@@ -31,6 +31,7 @@ public class SolatActivity extends AppCompatActivity {
 
     ActivitySolatBinding binding;
     private SolatAdapter solatAdapter;
+    Calendar calendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,7 +128,7 @@ public class SolatActivity extends AppCompatActivity {
 
     public void scrollToPosition() {
 //        int position = namazAdapter.getItemPosition("24-Jan-2023");
-        Calendar calendar = Calendar.getInstance();
+
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         System.out.println(day+2);
         Log.d("Hello", String.valueOf(day));
